@@ -29,7 +29,7 @@ Management suspects that some employees may be using TOR browsers to bypass netw
 
 Searched the DeviceFileEvents table for any file that had the string “tor” in it and discovered what looks like user “Employee” downloaded a tor installer and browser, that resulted in many tor related files being copied to the desktop and creation of a file called “tor-shopping-list”. 
 
-Query used: 
+Query used to locate events: 
 
 DeviceFileEvents
 | where FileName startswith "tor"
@@ -37,7 +37,9 @@ DeviceFileEvents
 | order by Timestamp desc
 | project Timestamp, DeviceName, ActionType, FileName, FolderPath, SHA256
 
-.
+.------------------------------------------------
+
+Josh's
 
 **Query used to locate events:**
 
