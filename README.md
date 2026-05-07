@@ -31,11 +31,8 @@ Searched the DeviceFileEvents table for any file that had the string “tor” i
 
 Query used to locate events: 
 
-DeviceFileEvents
-| where FileName startswith "tor"
-| where DeviceName == "threathuntfinal"
-| order by Timestamp desc
-| project Timestamp, DeviceName, ActionType, FileName, FolderPath, SHA256
+<img width="2140" height="674" alt="image" src="https://github.com/user-attachments/assets/0dae73ce-98c0-484a-a743-e375466995eb" />
+
 
 .------------------------------------------------
 
