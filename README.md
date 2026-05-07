@@ -31,7 +31,12 @@ Searched the DeviceFileEvents table for any file that had the string “tor” i
 
 Query used to locate events: 
 
-[<img width="2140" height="674" alt="image" src="https://github.com/user-attachments/assets/0dae73ce-98c0-484a-a743-e375466995eb" />](https://security.microsoft.com/v2/advanced-hunting?query=H4sIAJDq_GkAA3WQzwqCQByE59xTiOdOQd06BBadIqgXMDU0_EdaIvTwfbsrFmGI_txvZ2ZHAyV6KlPE3DFz5haSqFSrRjO95KlTCrlze6PqoFCFJQ3KkF2j79htUXvymRXUn8gIvk795Ky5nC-1utC-PWyTK-oSko95Jju2iZ4u6nme0Zgk16dQDYvtOho8NepKN1iEZsox_9PO8I11ZSSUOHvUjv_-EccqmOt3HL7E8JP25Cy01IpObzc6tqd-AQAA&timeRangeId=week)
+DeviceFileEvents
+| where FileName startswith "tor"
+| where DeviceName == "threathuntfinal"
+| order by Timestamp desc
+| project Timestamp, DeviceName, ActionType, FileName, FolderPath, SHA256
+
 
 
 .------------------------------------------------
