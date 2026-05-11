@@ -46,11 +46,8 @@ Searched for any `ProcessCommandLine` that contained the string "tor-browser-win
 
 **Query used to locate event:**
 
-```kql
+<img width="1292" height="295" alt="image" src="https://github.com/user-attachments/assets/1486bf5d-7ab5-4a3b-9476-bb492ff2c323" />
 
-
-```
-<img width="1212" alt="image" src="https://github.com/user-attachments/assets/b07ac4b4-9cb3-4834-8fac-9f5f29709d78">
 
 JOSH
 ---
