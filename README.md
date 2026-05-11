@@ -84,8 +84,8 @@ Searched for any indication the TOR browser was used to establish a connection u
 
 <img width="1461" height="286" alt="image" src="https://github.com/user-attachments/assets/8372c37c-5391-4d06-9354-a695647cbb15" />
 
-```
-<img width="1212" alt="image" src="https://github.com/user-attachments/assets/87a02b5b-7d12-4f53-9255-f5e750d0e3cb">
+<img width="1794" height="282" alt="image" src="https://github.com/user-attachments/assets/200ffb2f-d550-4076-b4fd-c41994cbe7cc" />
+
 
 ---
 
