@@ -58,6 +58,7 @@ Tor-browser-windows-x86_64-portable-15.0.11.exe installation at 2026-05-04T17:46
 
 
 ---
+
 JOSH
 ### 3. Searched the `DeviceProcessEvents` Table for TOR Browser Execution
 
@@ -66,7 +67,6 @@ Searched for any indication that user "employee" actually opened the TOR browser
 **Query used to locate events:**
 
 
-```
 <img width="1212" alt="image" src="https://github.com/user-attachments/assets/b13707ae-8c2d-4081-a381-2b521d3a0d8f">
 
 JOSH
