@@ -39,7 +39,7 @@ Query used to locate events:
 
 
 ---
-JOSH
+
 ### 2. Searched the `DeviceProcessEvents` Table
 
 Searched for any `ProcessCommandLine` that contained the string "tor.exe". Based on the logs returned, an employee on the "threathuntfinal" device ran the file `tor-browser-windows-x86_64-portable-14.0.1.exe` from their Downloads folder, using a command that triggered a silent installation.
@@ -54,10 +54,8 @@ Tor-browser-windows-x86_64-portable-15.0.11.exe installation at 2026-05-04T17:46
 
 <img width="1690" height="474" alt="image" src="https://github.com/user-attachments/assets/0f02f457-7ba0-46e1-aea7-fa3d8bfdcff2" />
 
-
-JOSH
 ---
-
+JOSH
 ### 3. Searched the `DeviceProcessEvents` Table for TOR Browser Execution
 
 Searched for any indication that user "employee" actually opened the TOR browser. There was evidence that they did open it at `2024-11-08T22:17:21.6357935Z`. There were several other instances of `firefox.exe` (TOR) as well as `tor.exe` spawned afterwards.
@@ -73,6 +71,7 @@ DeviceProcessEvents
 ```
 <img width="1212" alt="image" src="https://github.com/user-attachments/assets/b13707ae-8c2d-4081-a381-2b521d3a0d8f">
 
+JOSH
 ---
 
 ### 4. Searched the `DeviceNetworkEvents` Table for TOR Network Connections
