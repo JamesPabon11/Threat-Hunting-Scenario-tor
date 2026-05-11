@@ -98,6 +98,7 @@ Artifact: The file tor-browser-windows-x86_64-portable-15.0.11.exe was created o
 Significance: The use of the "Portable" version on the Desktop is a common tactic to bypass formal software installation policies.
 KQL Discovery Query:
 Code snippet
+
 DeviceFileEvents
 | where FileName startswith "tor"
 | where DeviceName == "threathuntfinal"
@@ -105,17 +106,20 @@ DeviceFileEvents
 | project Timestamp, DeviceName, ActionType, FileName, FolderPath, SHA256
 
 
-2. Staging and Preparation
+3. Staging and Preparation
 Action: Following the download, multiple Tor-related files were copied to the Desktop.
 Observation: The creation of a file named "tor-shopping-list" was detected.
 Significance: This suggests premeditated activity; the user was likely keeping a record of resources or targets to access once the anonymous session was established.
-3. Execution and Initialization
+
+4. Execution and Initialization
 Action: The installer was executed at 2026-05-06T20:08:24Z.
 Significance: This timestamp marks the transition from a downloaded file to an active process in system memory.
-4. Network Anonymization (Activity)
+
+5. Network Anonymization (Activity)
 Action: Between 4:23 PM and 4:24 PM, tor.exe established successful connections to external nodes.
 Observation: Connections were made to remote IPs (e.g., 37.59.175.224, 216.218.219.41) on ports 443 and 9001.
 Significance: These ports are standard for Tor Entry/Relay nodes. Once these connections were successful, the "Employee" account had a functional, encrypted tunnel to mask further actions.
+
 KQL Discovery Query:
 Code snippet
 DeviceNetworkEvents
@@ -134,3 +138,4 @@ The investigation identified a specific file, "tor-shopping-list," created durin
 
 Response Taken
 TOR usage was confirmed on the endpoint : ”employee”. The device was isolated and the user's direct manager was notified.
+
