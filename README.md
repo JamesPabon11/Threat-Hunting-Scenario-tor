@@ -66,8 +66,9 @@ Searched for any indication that user "employee" actually opened the TOR browser
 
 **Query used to locate events:**
 
+<img width="1196" height="235" alt="image" src="https://github.com/user-attachments/assets/79437325-fbbf-412f-8fae-a2ae5b8fc967" />
 
-<img width="1212" alt="image" src="https://github.com/user-attachments/assets/b13707ae-8c2d-4081-a381-2b521d3a0d8f">
+
 
 JOSH
 ---
