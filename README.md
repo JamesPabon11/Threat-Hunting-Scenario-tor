@@ -50,7 +50,8 @@ Searched for any `ProcessCommandLine` that contained the string "tor.exe". Based
 
 <img width="1674" height="335" alt="image" src="https://github.com/user-attachments/assets/c9902c25-4a11-4410-bd80-0eb79e61616d" />
 
-Tor-browser-windows-x86_64-portable-15.0.11.exe instillation at 2026-05-04T17:46:12.182745Z The file name is the standard, official installer for the Tor Browser on Windows.
+Tor-browser-windows-x86_64-portable-15.0.11.exe installation at 2026-05-04T17:46:12.182745Z The file name is the standard, official installer for the Tor Browser on Windows.
+
 <img width="1690" height="474" alt="image" src="https://github.com/user-attachments/assets/0f02f457-7ba0-46e1-aea7-fa3d8bfdcff2" />
 
 
