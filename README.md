@@ -1,4 +1,4 @@
-# Official [Cyber Range](http://joshmadakor.tech/cyber-range) Project
+
 
 <img width="400" src="https://github.com/user-attachments/assets/44bac428-01bb-4fe9-9d85-96cba7698bee" alt="Tor Logo with the onion and a crosshair on it"/>
 
@@ -36,22 +36,7 @@ Query used to locate events:
 <img width="1247" height="560" alt="image" src="https://github.com/user-attachments/assets/097f6f59-a95f-4d2b-94f9-b509a8d0e2eb" />
 
 
-.------------------------------------------------
 
-Josh's
-
-**Query used to locate events:**
-
-```kql
-DeviceFileEvents  
-| where DeviceName == "threat-hunt-lab"  
-| where InitiatingProcessAccountName == "employee"  
-| where FileName contains "tor"  
-| where Timestamp >= datetime(2024-11-08T22:14:48.6065231Z)  
-| order by Timestamp desc  
-| project Timestamp, DeviceName, ActionType, FileName, FolderPath, SHA256, Account = InitiatingProcessAccountName
-```
-<img width="1212" alt="image" src="https://github.com/user-attachments/assets/71402e84-8767-44f8-908c-1805be31122d">
 
 ---
 
