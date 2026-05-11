@@ -48,6 +48,8 @@ Searched for any `ProcessCommandLine` that contained the string "tor-browser-win
 
 <img width="1292" height="295" alt="image" src="https://github.com/user-attachments/assets/1486bf5d-7ab5-4a3b-9476-bb492ff2c323" />
 
+<img width="1674" height="335" alt="image" src="https://github.com/user-attachments/assets/c9902c25-4a11-4410-bd80-0eb79e61616d" />
+
 
 JOSH
 ---
