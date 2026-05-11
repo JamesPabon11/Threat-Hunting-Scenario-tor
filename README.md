@@ -91,61 +91,46 @@ Searched for any indication the TOR browser was used to establish a connection u
 
 ## Chronological Event Timeline 
 
-### 1. File Download - TOR Installer
+Chronological Timeline of Tor-Related Events
+1. Acquisition and Delivery
+Action: The account holder initiated a download of the official Tor Browser installer.
+Artifact: The file tor-browser-windows-x86_64-portable-15.0.11.exe was created on the system.
+Significance: The use of the "Portable" version on the Desktop is a common tactic to bypass formal software installation policies.
+KQL Discovery Query:
+Code snippet
+DeviceFileEvents
+| where FileName startswith "tor"
+| where DeviceName == "threathuntfinal"
+| order by Timestamp desc
+| project Timestamp, DeviceName, ActionType, FileName, FolderPath, SHA256
 
-- **Timestamp:** `2024-11-08T22:14:48.6065231Z`
-- **Event:** The user "employee" downloaded a file named `tor-browser-windows-x86_64-portable-14.0.1.exe` to the Downloads folder.
-- **Action:** File download detected.
-- **File Path:** `C:\Users\employee\Downloads\tor-browser-windows-x86_64-portable-14.0.1.exe`
 
-### 2. Process Execution - TOR Browser Installation
+2. Staging and Preparation
+Action: Following the download, multiple Tor-related files were copied to the Desktop.
+Observation: The creation of a file named "tor-shopping-list" was detected.
+Significance: This suggests premeditated activity; the user was likely keeping a record of resources or targets to access once the anonymous session was established.
+3. Execution and Initialization
+Action: The installer was executed at 2026-05-06T20:08:24Z.
+Significance: This timestamp marks the transition from a downloaded file to an active process in system memory.
+4. Network Anonymization (Activity)
+Action: Between 4:23 PM and 4:24 PM, tor.exe established successful connections to external nodes.
+Observation: Connections were made to remote IPs (e.g., 37.59.175.224, 216.218.219.41) on ports 443 and 9001.
+Significance: These ports are standard for Tor Entry/Relay nodes. Once these connections were successful, the "Employee" account had a functional, encrypted tunnel to mask further actions.
+KQL Discovery Query:
+Code snippet
+DeviceNetworkEvents
+| where DeviceName == "threathuntfinal"
+| where InitiatingProcessFolderPath has "Tor Browser"
+| extend Destination = iff(isnotempty(RemoteUrl), RemoteUrl, RemoteIP)
+| project Timestamp, DeviceName, ActionType, Destination, RemotePort,   InitiatingProcessFileName, InitiatingProcessCommandLine
+| where RemotePort in (9001, 9030, 443)
+| sort by Timestamp desc
 
-- **Timestamp:** `2024-11-08T22:16:47.4484567Z`
-- **Event:** The user "employee" executed the file `tor-browser-windows-x86_64-portable-14.0.1.exe` in silent mode, initiating a background installation of the TOR Browser.
-- **Action:** Process creation detected.
-- **Command:** `tor-browser-windows-x86_64-portable-14.0.1.exe /S`
-- **File Path:** `C:\Users\employee\Downloads\tor-browser-windows-x86_64-portable-14.0.1.exe`
 
-### 3. Process Execution - TOR Browser Launch
 
-- **Timestamp:** `2024-11-08T22:17:21.6357935Z`
-- **Event:** User "employee" opened the TOR browser. Subsequent processes associated with TOR browser, such as `firefox.exe` and `tor.exe`, were also created, indicating that the browser launched successfully.
-- **Action:** Process creation of TOR browser-related executables detected.
-- **File Path:** `C:\Users\employee\Desktop\Tor Browser\Browser\TorBrowser\Tor\tor.exe`
+Summary of Events
+On May 6, 2026, the Employee account on host threathuntfinal performed a series of unauthorized actions to anonymize their network presence. The account downloaded and executed an official, portable version of the Tor Browser, staging the files directly on the user's Desktop.
+The investigation identified a specific file, "tor-shopping-list," created during this process, which suggests the activity was a planned component of the broader attack. By 4:24 PM, the tor.exe process successfully established encrypted circuits through various global relay nodes. This provided a secure tunnel that was subsequently used to perform high-volume administrative changes in Azure (including 49 resource creations) while hiding the user's true IP address and location from security logs.
 
-### 4. Network Connection - TOR Network
-
-- **Timestamp:** `2024-11-08T22:18:01.1246358Z`
-- **Event:** A network connection to IP `176.198.159.33` on port `9001` by user "employee" was established using `tor.exe`, confirming TOR browser network activity.
-- **Action:** Connection success.
-- **Process:** `tor.exe`
-- **File Path:** `c:\users\employee\desktop\tor browser\browser\torbrowser\tor\tor.exe`
-
-### 5. Additional Network Connections - TOR Browser Activity
-
-- **Timestamps:**
-  - `2024-11-08T22:18:08Z` - Connected to `194.164.169.85` on port `443`.
-  - `2024-11-08T22:18:16Z` - Local connection to `127.0.0.1` on port `9150`.
-- **Event:** Additional TOR network connections were established, indicating ongoing activity by user "employee" through the TOR browser.
-- **Action:** Multiple successful connections detected.
-
-### 6. File Creation - TOR Shopping List
-
-- **Timestamp:** `2024-11-08T22:27:19.7259964Z`
-- **Event:** The user "employee" created a file named `tor-shopping-list.txt` on the desktop, potentially indicating a list or notes related to their TOR browser activities.
-- **Action:** File creation detected.
-- **File Path:** `C:\Users\employee\Desktop\tor-shopping-list.txt`
-
----
-
-## Summary
-
-The user "employee" on the "threat-hunt-lab" device initiated and completed the installation of the TOR browser. They proceeded to launch the browser, establish connections within the TOR network, and created various files related to TOR on their desktop, including a file named `tor-shopping-list.txt`. This sequence of activities indicates that the user actively installed, configured, and used the TOR browser, likely for anonymous browsing purposes, with possible documentation in the form of the "shopping list" file.
-
----
-
-## Response Taken
-
-TOR usage was confirmed on the endpoint `threat-hunt-lab` by the user `employee`. The device was isolated, and the user's direct manager was notified.
-
----
+Response Taken
+TOR usage was confirmed on the endpoint : ”employee”. The device was isolated and the user's direct manager was notified.
