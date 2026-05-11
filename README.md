@@ -59,7 +59,7 @@ Tor-browser-windows-x86_64-portable-15.0.11.exe installation at 2026-05-04T17:46
 
 ---
 
-JOSH
+
 ### 3. Searched the `DeviceProcessEvents` Table for TOR Browser Execution
 
 Searched for any indication that user "employee" actually opened the TOR browser. There was evidence that they did open it. There were several other instances of `firefox.exe` (TOR) as well as `tor.exe` spawned.
@@ -71,8 +71,10 @@ Searched for any indication that user "employee" actually opened the TOR browser
 <img width="1787" height="673" alt="image" src="https://github.com/user-attachments/assets/3e6712ca-b42b-4cd3-addf-00692c767c61" />
 
 
-JOSH
+
 ---
+
+JOSH
 
 ### 4. Searched the `DeviceNetworkEvents` Table for TOR Network Connections
 
