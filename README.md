@@ -74,7 +74,7 @@ Searched for any indication that user "employee" actually opened the TOR browser
 
 ---
 
-JOSH
+
 
 ### 4. Searched the `DeviceNetworkEvents` Table for TOR Network Connections
 
