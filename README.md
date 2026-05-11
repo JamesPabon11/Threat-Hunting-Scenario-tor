@@ -40,19 +40,22 @@ Query used to locate events:
 
 ---
 
+
 ### 2. Searched the `DeviceProcessEvents` Table
 
 Searched for any `ProcessCommandLine` that contained the string "tor.exe". Based on the logs returned, an employee on the "threathuntfinal" device ran the file `tor-browser-windows-x86_64-portable-14.0.1.exe` from their Downloads folder, using a command that triggered a silent installation.
 
 **Query used to locate event:**
 
-<img width="1292" height="295" alt="image" src="https://github.com/user-attachments/assets/1486bf5d-7ab5-4a3b-9476-bb492ff2c323" />
+<img width="1585" height="236" alt="image" src="https://github.com/user-attachments/assets/38316d27-a5a8-4977-8616-b38263945df8" />
+
 
 <img width="1674" height="335" alt="image" src="https://github.com/user-attachments/assets/c9902c25-4a11-4410-bd80-0eb79e61616d" />
 
 Tor-browser-windows-x86_64-portable-15.0.11.exe installation at 2026-05-04T17:46:12.182745Z The file name is the standard, official installer for the Tor Browser on Windows.
 
 <img width="1690" height="474" alt="image" src="https://github.com/user-attachments/assets/0f02f457-7ba0-46e1-aea7-fa3d8bfdcff2" />
+
 
 ---
 JOSH
